@@ -9,27 +9,25 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add front end dropdown for toggling and saving of units and measurements.
+Add front-end dropdowns for toggling measurement units.
 
 == Description ==
 
-**Why Unit Switcher?**
+**Why Units?**
 
-Units provides your users with a way to choose and display their preferred unit of measurement on the fly. The user's preferred unit of measurement is saved via session, cookie, or none – configurable under the plugin settings. 
+Units provides your users with an intuitive way to choose and display their preferred unit of measurement. The user's preferred unit of measurement is saved via session, cookie, or none – configurable under the plugin settings. 
 
-One example of usage would be for a real estate listing website. If land size is stored as acres, it may be helpful to provide a method for users to toggle between acres and kilometers squared as their preferred method of measurement. Another example may be a recipe site, where it may be helpful to provide users with a way to toggle between ingredient measurement units.
-
-Units may be added as needed, along with alternate units and the conversion formulas.
+Any number of primary/alternate units can be added, along with their conversion formulas.
 
 Visit [unitswitcher.com](http://unitswitcher.com) for more detailed information.
 
 **Using Units**
 
-First, add primary units under settings > Units. Alternate units may be added by providing their name, singular name and conversion formula. Multiple alternate units may be set.
+Add primary units under Settings > Units. Alternate units may be added by providing their name and conversion formula. Multiple alternate units may be added for each primary unit.
 
-Use the function `unit_switcher($variable, $primaryunit)` in your template to display the switcher. Pass the stored value as the first paramter and primary unit of measurement as the second value.
+Use the function `unit_switcher($value, $primaryunit, $round)` in your template to display the switcher. Pass the stored value as the first parameter and primary unit of measurement as the second value.
 
-To display a single switcher, the shortcode [unit_switcher] is available for use. The shortcode requires two parameters, `unit` (the primary unit being converted) and `value` (the stored value).
+To display a single switcher, the shortcode [unit_switcher] is available for use. The shortcode requires two parameters: `unit` (the primary unit being converted) and `value` (the stored value).
 
 For more information visit [unitswitcher.com](http://unitswitcher.com).
 
@@ -63,13 +61,13 @@ Visit Settings > Unit Switcher. A primary unit of measurement is required, along
 
 == Changelog ==
 
-= 0.1 =
+= 1.0 =
 * Initial release 
 
 
 == Upgrade Notice ==
 
-= 0.1 =
+= 1.0 =
 Initial release
 
 
