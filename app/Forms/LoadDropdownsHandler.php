@@ -18,7 +18,7 @@ class LoadDropdownsHandler {
 	private function getDropdowns()
 	{
 		$all_dropdowns = $_POST['dropdowns'];
-		$dropdowns = [];
+		$dropdowns = array();
 		foreach($all_dropdowns as $key => $item){
 			$id = sanitize_text_field($item['id']);
 			$unit = sanitize_text_field($item['unit']);
