@@ -134,7 +134,7 @@ function send_dropdown_data(dropdowns)
 			dropdowns: dropdowns
 		},
 		success: function(data){
-			replace_dropdowns(data.dropdowns);
+			console.log(data);
 		}
 	});
 }
@@ -145,10 +145,10 @@ function send_dropdown_data(dropdowns)
 function replace_dropdowns(dropdowns)
 {
 	var all_dropdowns = $('.unit-switcher-switch');
-	$.each(all_dropdowns, function(i, v){
+	for ( var i = 0; i < all_dropdowns.length; i++ ){
 		var newhtml = dropdowns[i];
-		$(this).html(newhtml);
-	});
+		$(all_dropdowns[i]).html(newhtml);
+	}
 }
 
 
