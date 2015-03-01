@@ -110,7 +110,8 @@ class Dependencies {
 			'unit_switcher',
 			array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'nonce' => wp_create_nonce( 'unit_switcher-nonce' )
+				'nonce' => wp_create_nonce( 'unit_switcher-nonce' ),
+				'cache' => $this->settings_repo->cacheEnabled()
 			)
 		);
 	}

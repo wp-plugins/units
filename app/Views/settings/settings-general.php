@@ -23,6 +23,19 @@
 	</td>
 </tr>
 <tr valign="top">
+	<th scope="row"><?php _e('Page Caching Enabled?', 'unitswitcher'); ?></th>
+	<td valign="top">
+		<label>
+			<input type="radio" name="unitswitcher_cache" value="false" <?php if ( !$this->settings_repo->cacheEnabled() ) echo ' checked'; ?>> <?php _e('No', 'unitswitcher'); ?>
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="unitswitcher_cache" value="true" <?php if ( $this->settings_repo->cacheEnabled() ) echo ' checked'; ?>> <?php _e('Yes', 'unitswitcher'); ?>
+		</label>
+		<p><em><?php _e('If you are using a page caching plugin such as WP Super Cache or W3 Total Cache, this option will help prevent caching conflicts.', 'unitswitcher'); ?></em></p>
+	</td>
+</tr>
+<tr valign="top">
 	<th scope="row"><?php _e('Display Options', 'unitswitcher'); ?></th>
 	<td>
 		<div class="unitswitcher-dependency">

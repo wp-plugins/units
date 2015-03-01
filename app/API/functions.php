@@ -7,7 +7,7 @@ use UnitSwitcher\Entities\Unit\Dropdown;
 */
 function get_unit_switcher($variable = '', $primaryunit = '', $round = 2)
 {	
-	$dropdown = new Dropdown($primaryunit, $variable, $round);
+	$dropdown = new Dropdown(sanitize_text_field($primaryunit), sanitize_text_field($variable), sanitize_text_field($round));
 	return  ( $dropdown->hasAlternates() ) ? $dropdown->display() : $variable . ' ' . $primaryunit;
 }
 

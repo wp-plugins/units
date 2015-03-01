@@ -66,4 +66,13 @@ class SettingsRepository {
 		return ( $option !== 'none') ? $option : false;
 	}
 
+	/**
+	* Is Page Caching Enabled?
+	*/
+	public function cacheEnabled()
+	{
+		$option = get_option('unitswitcher_cache');
+		return ( $option !== "" && $option == 'true' ) ? true : false;
+	}
+
 }

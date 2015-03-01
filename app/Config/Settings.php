@@ -56,6 +56,7 @@ class Settings {
 	{
 		register_setting( 'unit-switcher-general', 'unitswitcher_dependencies' );
 		register_setting( 'unit-switcher-general', 'unitswitcher_save' );
+		register_setting( 'unit-switcher-general', 'unitswitcher_cache' );
 		register_setting( 'unit-switcher-units', 'unitswitcher_units', array($this, 'validateUnits') );
 	}
 

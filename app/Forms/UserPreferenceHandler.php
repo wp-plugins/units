@@ -41,7 +41,7 @@ class UserPreferenceHandler {
 	*/
 	private function validateNonce()
 	{
-		if ( !wp_verify_nonce( $this->data['nonce'], 'unit_switcher-nonce' ) ) return $this->sendError();
+		if ( !wp_verify_nonce( $this->data['nonce'], 'unit_switcher_nonce' ) ) return $this->sendError();
 	}
 
 	/**

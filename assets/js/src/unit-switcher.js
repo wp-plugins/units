@@ -3,10 +3,46 @@
 */
 jQuery(function($){
 
+/**
+* --------------------------------------------------------------------
+* Generate a Nonce (fix for cached pages)
+* --------------------------------------------------------------------
+*/
+$(document).ready(function(){
+	generate_nonce();
+});
+
+/**
+* Get a New Nonce
+*/
+function generate_nonce()
+{
+	$.ajax({
+		url: unit_switcher.ajaxurl,
+		type: 'post',
+		datatype: 'json',
+		data: {
+			action : 'unitswitchernonce'
+		},
+		success: function(data){
+			appendNonce(data.nonce);
+		}
+	});
+}
+
+/**
+* Append the new nonce
+*/
+function appendNonce(nonce)
+{
+	var script = '<script type="text/javascript"> var unit_switcher_nonce = "' + nonce + '" ;</script>';
+	$('head').append(script);
+}
+
 
 /**
 * --------------------------------------------------------------------
-* Unit Switcher
+* Process a Unit Switch
 * --------------------------------------------------------------------
 */
 $(document).on('click', '*[data-unitswitcher]', function(e){
@@ -49,8 +85,69 @@ function save_user_pref(parent_unit, selected_unit)
 			action : 'unitswitcher',
 			parent_unit : parent_unit,
 			selected_unit : selected_unit,
-			nonce : unit_switcher.nonce
+			nonce : unit_switcher_nonce
 		}
+	});
+}
+
+
+/**
+* --------------------------------------------------------------------
+* Lazy Load Dropdowns – Cached Pages
+* --------------------------------------------------------------------
+*/
+$(document).ready(function(){
+	if ( unit_switcher.cache === '1' ){
+		load_unit_dropdowns();
+	}
+});
+
+/**
+* Get all the dropdowns
+*/
+function load_unit_dropdowns()
+{
+	var all_dropdowns = $('*[data-unit-dropdown]');
+	var dropdowns = [];
+	$.each(all_dropdowns, function(i, v){
+		dropdowns[i] = {
+			id : i,
+			value : $(this).data('value'),
+			unit : $(this).data('unit'),
+			round : $(this).data('round')
+		}
+	});
+	send_dropdown_data(dropdowns);
+}
+
+/**
+* Send the droddown data
+*/
+function send_dropdown_data(dropdowns)
+{
+	$.ajax({
+		url: unit_switcher.ajaxurl,
+		type: 'post',
+		datatype: 'json',
+		data: {
+			action: 'unitswitcher_dropdowns',
+			dropdowns: dropdowns
+		},
+		success: function(data){
+			replace_dropdowns(data.dropdowns);
+		}
+	});
+}
+
+/**
+* Replace the dropdowns
+*/
+function replace_dropdowns(dropdowns)
+{
+	var all_dropdowns = $('.unit-switcher-switch');
+	$.each(all_dropdowns, function(i, v){
+		var newhtml = dropdowns[i];
+		$(this).html(newhtml);
 	});
 }
 

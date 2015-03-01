@@ -12,7 +12,7 @@ class UnitSwitcher {
 		$unit_switcher_env = 'live';
 
 		global $unit_switcher_version;
-		$unit_switcher_version = '1.0';
+		$unit_switcher_version = '1.0.1';
 
 		$app = new UnitSwitcher\Bootstrap;
 	}

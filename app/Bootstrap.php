@@ -9,7 +9,7 @@ class Bootstrap {
 		$this->init();
 		$this->setFormActions();
 		add_action( 'init', array($this, 'startSession') );
-		add_filter( 'plugin_action_links_' . 'unit-switcher/unit-switcher.php', array($this, 'settingsLink' ) );
+		add_filter( 'plugin_action_links_' . 'units/units.php', array($this, 'settingsLink' ) );
 		add_action( 'plugins_loaded', array($this, 'addLocalization') );
 	}
 

@@ -71,7 +71,8 @@ class Activate {
 	*/
 	private function setOptions()
 	{
-		if ( !get_option('unitswitcher_dependencies') ){
+		if ( !get_option('unitswitcher_dependencies') 
+			&& get_option('unitswitcher_dependencies') !== "" ){
 			update_option('unitswitcher_dependencies', array(
 				'css' => 'true',
 				'js' => 'true'
@@ -79,6 +80,9 @@ class Activate {
 		}
 		if ( !get_option('unitswitcher_save') ){
 			update_option('unitswitcher_save', 'none');
+		}
+		if ( !get_option('unitswitcher_cache') ){
+			update_option('unitswitcher_cache', 'false');
 		}
 		if ( !get_option('unitswitcher_units') ){
 			update_option('unitswitcher_units', $this->defaultUnits() );
