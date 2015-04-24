@@ -3,7 +3,7 @@ Contributors: kylephillips
 Donate link: http://unitswitcher.com/
 Tags: units, measurements, localization
 Requires at least: 3.8
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: 1.0.1
 
 License: GPLv2 or later
