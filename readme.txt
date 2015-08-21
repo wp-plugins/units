@@ -3,7 +3,7 @@ Contributors: kylephillips
 Donate link: http://unitswitcher.com/
 Tags: units, measurements, localization
 Requires at least: 3.8
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: 1.0.1
 
 License: GPLv2 or later
@@ -60,6 +60,9 @@ Visit Settings > Unit Switcher. A primary unit of measurement is required, along
 
 
 == Changelog ==
+
+= 1.0.2 =
+* Bug fix - conflict with Bootstrap Javascript libary resolved.
 
 = 1.0.1 =
 * Page caching conflicts resolved. If using a page cache plugin, visit Settings > Unit Switcher to enable the fix.

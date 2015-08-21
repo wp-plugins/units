@@ -27,9 +27,11 @@
     .unit-switcher-switch ul li a {
       display: block;
       padding: 4px 15px; }
-  .unit-switcher-switch.open ul {
+    .unit-switcher-switch ul.active {
+      display: block; }
+  .unit-switcher-switch.active ul {
     display: block; }
-  .unit-switcher-switch.open .unit-switcher-caret {
+  .unit-switcher-switch.active .unit-switcher-caret {
     background: url('../images/caret-up.png') no-repeat; }
 
 .unit-switcher-caret {

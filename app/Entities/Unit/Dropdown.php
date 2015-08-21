@@ -98,13 +98,13 @@ class Dropdown {
 		$out = '<div class="unit-switcher-switch dropdown">';
 
 		if ( !$preference ) {
-			$out .= '<a href="#" data-unit-dropdown data-unit="' . $this->unit . '" class="unit-switcher-toggle" data-toggle="dropdown" data-value="' . $this->number . '" data-round="' . $this->round . '"><span class="unit-switcher-value">' . $this->number . ' ' . $this->unit . '</span><span class="unit-switcher-caret"></span></a>';
+			$out .= '<a href="#" data-unit-dropdown data-unit="' . $this->unit . '" class="unit-switcher-toggle" data-value="' . $this->number . '" data-round="' . $this->round . '"><span class="unit-switcher-value">' . $this->number . ' ' . $this->unit . '</span><span class="unit-switcher-caret"></span></a>';
 			return $out;
 		}
 		
 		foreach ( $alternates as $alternate ){
 			if ( $alternate !== $preference ) continue;
-			$out .= '<a href="#" data-unit-dropdown data-unit="' . $this->unit . '" class="unit-switcher-toggle" data-toggle="dropdown" data-value="' . $this->number . '" data-round="' . $this->round . '"><span class="unit-switcher-value">' . $this->alternateNumber($alternate) . ' ' . $alternate . '</span><span class="unit-switcher-caret"></span></a>';
+			$out .= '<a href="#" data-unit-dropdown data-unit="' . $this->unit . '" class="unit-switcher-toggle" data-value="' . $this->number . '" data-round="' . $this->round . '"><span class="unit-switcher-value">' . $this->alternateNumber($alternate) . ' ' . $alternate . '</span><span class="unit-switcher-caret"></span></a>';
 		}
 		return $out;
 	}
